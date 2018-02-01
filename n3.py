@@ -19,7 +19,7 @@ def country_dict(lines_list, year):
     """
     res = {}
     for i in lines_list:
-        if "("+str(year) in i:
+        if "(" + str(year) in i:
             country = i.split()[-1]
             res[country] = res.get(country, []).append(i.split()[:-1])
     return res
@@ -50,6 +50,9 @@ def write_films(film_list):
 def films_year(year):
     """
     (int -> None)
+    Program read from file country and amount of films that were or will be
+    released in a certain year. Function return sorted list countries with
+    the bigest amount of films in recession. Results are written to the file.
     """
     cont = read_file("countries.list")
     cont = country_dict(cont, year)
@@ -57,4 +60,4 @@ def films_year(year):
     write_films(cont)
 
 
-films_year(int(input("Enter a year's number:",)))
+films_year(int(input("Enter a year's number: ")))

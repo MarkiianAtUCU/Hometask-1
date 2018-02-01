@@ -59,6 +59,11 @@ def check(r, tch, l, s1, s2):
 
 
 def main_program():
+    """
+    This function takes info about amount of chocolates, radius of box
+    and the accuracy of the calculations and return the length of the ropes
+    that can strap the box. Results are written to the file.
+    """
     try:
         n, r, tch, l, s1, s2 = input_inf()
         res = []
