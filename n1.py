@@ -30,11 +30,16 @@ def write_file(res):
     """
     Write result to file
     """
-    with open("result.txt", "w") as file:
+    with open("n1_result.txt", "w") as file:
         file.write(str(res))
 
 
 def main_program():
+    """
+    This function takes info about equilateral triangle and search side
+    of the bigest square that can be write in this triangle.
+    Results are written to the file.
+    """
     a, b, tch = input_info()
     result = res(a, b, tch)
     print(result)
