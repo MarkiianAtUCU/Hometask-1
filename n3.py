@@ -27,7 +27,6 @@ def country_dict(lines_list, year):
                 res[country].append(line.split("\t")[0])
             else:
                 res[country] = [line.split("\t")[0]]
-    print(n)
     return res
 
 

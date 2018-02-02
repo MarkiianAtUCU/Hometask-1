@@ -22,6 +22,6 @@ try:
     if a < 0 or b < 0:
         print("Enter only positive numbers, please!")
     else:
-        print("The largest common divisor is:", gcd(a, b))
+        print("The greatest common divisor is:", gcd(a, b))
 except:
     print("Enter only positive integers numbers, please!")

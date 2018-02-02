@@ -40,11 +40,16 @@ def films_id(n, votes_dict):
     :param votes_dict:
     :return:
     """
+    result = set()
     # create a list of films and sort it
     lst_of_film = [(vote, votes_dict[vote]) for vote in votes_dict]
     lst_of_film = sorted(lst_of_film, key=lambda i: i[1], reverse=True)
     # use the lst_of_film for result set
-    result = {lst_of_film[i][0] for i in range(n)}
+    try:
+        for i in range(n):
+            result.add(lst_of_film[i][0])
+    except:
+        print("Not enough films")
     return result
 
 
@@ -59,7 +64,6 @@ def write_films_id(set_films_id):
     with open("n5_result.txt", "w") as file:
         for films in set_films_id:
             file.write(films + "\n")
-
 
 def find_films_id(n, num_v):
     """

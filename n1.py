@@ -3,11 +3,13 @@ def input_info():
     Input info aboat triangle
     """
     a, b, c, tch = map(float, input(
-        "Enter length of sides of triangle and accuracy (1 2 3 4): ").split())
-    # search for similar sides of triangle
+        "Enter length of sides of triangle and accuracy (12 12 10 0.1): ").
+        split())
+    # check triangle inequality
     if a + b <= c or b + c <= a or c + a <= b:
         print("Wrong sides of the triangle!")
         return 0
+    # search for similar sides of triangle
     if a == b:
         return a, c, tch
     if a == c:

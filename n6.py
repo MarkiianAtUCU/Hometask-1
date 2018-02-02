@@ -75,7 +75,10 @@ def write_films_id(films_id):
     """
     with open("n6_result.txt", "w") as file:
         for element in films_id:
-            file.write(str(element))
+            file.write("Film id: " + str(element[0]) + "\n")
+            file.write("Director's/writer's id:\n")
+            for director in element[1]:
+                file.write(str(director) + "\n")
             file.write("\n")
 
 
@@ -89,4 +92,7 @@ def find_directors_id(flag='directors'):
     write_films_id(maximum_list)
     print("Done!")
 
-find_directors_id(flag="writers")
+try:
+    find_directors_id(input("Input version (writers/directors): "))
+except:
+    print("Wrong input!")

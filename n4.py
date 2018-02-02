@@ -55,4 +55,4 @@ def find_literature(n):
     write_author(authors_set)
 
 
-find_literature(int(input('Enter a number:',)))
+find_literature(int(input('Enter a number: ',)))
