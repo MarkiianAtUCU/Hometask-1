@@ -18,8 +18,8 @@ def rec(n, m):
 # check the input
 try:
     sys.setrecursionlimit(1000000)
-    n = int(input('Enter a positive integer: '))
-    m = int(input('Enter another positive integer: '))
+    n = int(input('Enter a positive integer n: '))
+    m = float(input('Enter another positive integer m: '))
     if n < 0 or m < 0:
         print("Error! Enter valid value")
     else:
