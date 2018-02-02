@@ -5,10 +5,10 @@ def read_file(path):
     """
     res = []
     with open(path, "r") as file:
+        for i in range(14):
+            file.readline()
         for i in file:
-            # check whether line starts with bracket
-            if i.startswith('"'):
-                res.append(i.strip())
+            res.append(i.strip())
     return res
 
 
@@ -18,13 +18,16 @@ def country_dict(lines_list, year):
     Return dict from list of lines with country as key and name as value
     """
     res = {}
-    for i in lines_list:
-        if "(" + str(year) in i:
-            country = i.split()[-1]
+    n = 0
+    for line in lines_list:
+        if "(" + str(year) in line:
+            n += 1
+            country = line.split("\t")[-1]
             if country in res:
-                res[country].append(i.split()[:-1])
+                res[country].append(line.split("\t")[0])
             else:
-                res[country] = [i.split()[:-1]]
+                res[country] = [line.split("\t")[0]]
+    print(n)
     return res
 
 
