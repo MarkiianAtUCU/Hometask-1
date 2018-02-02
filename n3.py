@@ -21,7 +21,10 @@ def country_dict(lines_list, year):
     for i in lines_list:
         if "(" + str(year) in i:
             country = i.split()[-1]
-            res[country] = res.get(country, []).append(i.split()[:-1])
+            if country in res:
+                res[country].append(i.split()[:-1])
+            else:
+                res[country] = [i.split()[:-1]]
     return res
 
 
